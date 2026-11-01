@@ -1,0 +1,25 @@
+#!/bin/bash
+
+NUMBERS=()
+STRINGS=()
+NAMES=()
+NUMBERS+=(1)
+NUMBERS+=(2)
+NUMBERS+=(3)
+
+STRINGS+=("hello")
+STRINGS+=("world")
+
+
+NAMES+=("John")
+NAMES+=("Eric")
+NAMES+=("jessica") 
+
+NumberOfNames=${#NAMES[@]}
+second_name=${NAMES[1]} # so 0 indexed
+
+echo "NUMBERS array : ${NUMBERS[2]}"
+echo "STRINGS array: ${STRINGS[@]}"
+#echo "Names array: ${NAMES[@]}"
+echo "The number of names listed in the NAMES array: $NumberOfNames"
+echo "The second name on the NAMES list: $second_name"

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+
+#current directory
+CUR=$(pwd)
+# directory where the logs are kept
+DIR="/home/labex/project/apps_log"
+# will transfer to previous directory that the user was using or i can just make it so a service user is using this  service
+cd DIR
+ls *.log > log_list.txt
+#this is for spectating what kinda logs there are
+
+#now compression using tar and gzip
+tar -czf logs_archive.tar.z *.log
+# will create the archive in the logs directory itself
+
+#check (work on this for checking and comparing with log_list to see all the logs are there or not. if not then notify the user in some way and 
+# and exit
+tar -tf logs_archive.tar.gz > archive_content.txt
+
+#after checking, delete the logs
+rm *.log
+cd CUR

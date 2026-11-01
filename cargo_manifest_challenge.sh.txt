@@ -1,0 +1,55 @@
+#!/bin/bash
+
+# Define arrays for each cargo bay's inventory
+forward_bay=()
+midship_bay=()
+aft_bay=()
+forward_bay+=("Space Suits")
+forward_bay+=("Oxygen Tanks")
+forward_bay+=("Repair Kits")
+
+midship_bay+=("Food Supplies")
+midship_bay+=("Water Containers")
+midship_bay+=("Medical Equipment")
+
+aft_bay+=("Spare Parts")
+aft_bay+=("Fuel Cells")
+aft_bay+=("Scientific Instruments")
+# Check if an argument is provided
+if [ $# -eq 0 ]; then
+    # Your code here
+    echo "Please specify a cargo bay: forward, midship, or aft"
+    exit 1
+fi
+
+# Display inventory based on the argument
+count=1
+if [ "$1" = "forward" ]; then
+    # Your code here
+    echo "Forward Bay Inventory:"
+    for arg in "${forward_bay[@]}"; do
+        echo "${count}. $arg"
+        count=$((count+1))
+    done
+    count=0
+elif [ "$1" = "midship" ]; then
+    # Your code here
+    echo "Midship Bay Inventory:"
+    for arg in "${midship_bay[@]}"; do
+        echo "${count}. $arg"
+        count=$((count+1))
+    done
+    count=0
+elif [ "$1" = "aft" ]; then
+    # Your code here
+    echo "Aft Bay Inventory:"
+    for arg in "${aft_bay[@]}"; do
+        echo "${count}. $arg"
+        count=$((count+1))
+    done
+    count=0
+else
+    # Your code here
+    echo "Invalid cargo bay. Choose forward, midship, or aft"
+    exit 1
+fi
